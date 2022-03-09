@@ -2,7 +2,10 @@ from abc import ABC, abstractmethod
 
 class Band:
     '''
-    
+    A class to creat a band.
+    Input: name of the band, members of the band 
+    Consteructor: name, list of member(list of objects) , append the creted obeject to a global list
+    Methods: play_solos, to_list
     '''
     instances = []
 
@@ -12,6 +15,7 @@ class Band:
         Band.instances.append(self)
 
     def play_solos(self):
+        '''A method to creat a list of solo instrumentel sounds for each member in the band'''
         solos_list = []
         for member in self.members:
             solos_list.append(member.play_solo())
@@ -19,18 +23,20 @@ class Band:
 
     @classmethod
     def to_list(cls):
+        '''A method to creat a list of objects created by this class (Band)'''
         return cls.instances
 
     def __str__(self):
-        return "I am __str__"
+        return f"Our band name is {self.name} and we play music"
 
     def __repr__(self):
-        return "I am __repr__"
+        return f"Band instance. Name = {self.name}"
 
 
-class Musician(Band):
+class Musician:
     '''
-    
+    A class to create musicians. There are 3 sub-classes inherited from this class (Guitarist, Bassist, Drummer).
+    This class force the inherited classes to have 2 methods (get_instrument, play_solo)
     '''
 
     @abstractmethod
@@ -45,7 +51,10 @@ class Musician(Band):
 
 class Guitarist(Musician):
     '''
-    
+    A class to creat a guitarist object.
+    Input: name of the guitarist
+    Constructor: name
+    Methods: get_instrument, play_solo
     '''
     def __init__ (self, name):
         self.name = name
@@ -57,15 +66,20 @@ class Guitarist(Musician):
         return f"Guitarist instance. Name = {self.name}"
     
     def get_instrument(self):
+        '''A method returns the instrument that the this musician uses'''
         return 'guitar'
 
     def play_solo(self):
+        '''A method returns a mimic the solo playing on this instrument'''
         return 'face melting guitar solo'
 
 
 class Bassist(Musician):
     '''
-    
+    A class to creat a bassist object.
+    Input: name of the bassist
+    Constructor: name
+    Methods: get_instrument, play_solo
     '''
     def __init__ (self, name):
         self.name = name
@@ -77,15 +91,20 @@ class Bassist(Musician):
         return f"Bassist instance. Name = {self.name}"
 
     def get_instrument(self):
+        '''A method returns the instrument that the this musician uses'''
         return 'bass'
 
     def play_solo(self):
+        '''A method returns a mimic the solo playing on this instrument'''
         return 'bom bom buh bom'
 
 
 class Drummer(Musician):
     '''
-    
+    A class to creat a drummer object.
+    Input: name of the drummer
+    Constructor: name
+    Methods: get_instrument, play_solo
     '''
     def __init__ (self, name):
         self.name = name
@@ -97,9 +116,11 @@ class Drummer(Musician):
         return f"Drummer instance. Name = {self.name}"
 
     def get_instrument(self):
+        '''A method returns the instrument that the this musician uses'''
         return 'drums'
 
     def play_solo(self):
+        '''A method returns a mimic the solo playing on this instrument'''
         return 'rattle boom crash'
 
 
