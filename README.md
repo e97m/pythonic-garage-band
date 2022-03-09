@@ -4,10 +4,10 @@ Date: 09/03/2022
 
 Python version: 3.9.5
 
-aplication version: 0.1.0
+Aplication version: 0.1.0
 
-overview:
+Overview:
 
-This applicatin let the user to creat a band and cpicify musicians for it. To opent it I recommand you install poerty and run the poetry shell. You can find a test file uses pytest to test the functionality of this application.
+This application lets the user create a band and specify musicians for it. To open it I recommend you install poetry and run the poetry shell. You can find a test file that uses pytest to test the functionality of this application.
 
 https://github.com/e97m/pythonic-garage-band/pull/1 
