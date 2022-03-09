@@ -38,6 +38,8 @@ class Musician:
     A class to create musicians. There are 3 sub-classes inherited from this class (Guitarist, Bassist, Drummer).
     This class force the inherited classes to have 2 methods (get_instrument, play_solo)
     '''
+    def __init__ (self, name):
+        self.name = name
 
     @abstractmethod
     def get_instrument():
@@ -56,9 +58,6 @@ class Guitarist(Musician):
     Constructor: name
     Methods: get_instrument, play_solo
     '''
-    def __init__ (self, name):
-        self.name = name
-
     def __str__(self):
         return f"My name is {self.name} and I play guitar"
 
@@ -81,8 +80,6 @@ class Bassist(Musician):
     Constructor: name
     Methods: get_instrument, play_solo
     '''
-    def __init__ (self, name):
-        self.name = name
 
     def __str__(self):
         return f"My name is {self.name} and I play bass"
@@ -106,8 +103,6 @@ class Drummer(Musician):
     Constructor: name
     Methods: get_instrument, play_solo
     '''
-    def __init__ (self, name):
-        self.name = name
 
     def __str__(self):
         return f"My name is {self.name} and I play drums"
@@ -129,3 +124,5 @@ bassist_01 = Bassist ('Krist Novoselic')
 drummer_01 = Drummer ('Dave Grohl')
 
 band_01 = Band('one_band', [guitarist_01, bassist_01, drummer_01])
+
+print(band_01)
